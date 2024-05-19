@@ -53,7 +53,7 @@ const props = defineProps<{
 
 
 const openProjectWorkflowInNewTab = () => {
-  const routeUrl = `/project-${props.projName.toLowerCase()}`;
+  const routeUrl = `/portfolio/project-${props.projName.toLowerCase()}`;
   window.open(routeUrl, '_blank');
 };
 
