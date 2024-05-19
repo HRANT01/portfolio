@@ -2,9 +2,9 @@
   <div v-if="!props.positionType || props.positionType === 'left'" class="flex justify-between w-[80%] m-auto pb-10 ">
     <div v-motion-pop-visible class="card basis-1/2">
       <icon :icon-name="props.iconName"/>
-      <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
+      <div v-if="props.projName" >{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <button class="card-btn" @click="openProjectInNewTab">More</button>
+      <router-link class="card-btn"   :to="`/project-${props.projName.toLowerCase()}`" target="_blank">More</router-link>
     </div>
     <div v-motion-pop-visible class="text-[#00A97F]  basis-1/2 w-full ">
       <div class="ml-[5%]">
@@ -33,7 +33,7 @@
       <icon :icon-name="props.iconName"/>
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <button class="card-btn" @click="openProjectInNewTab">More</button>
+      <router-link class="card-btn"  :to="`/project-${props.projName.toLowerCase()}`" target="_blank">More</router-link>
     </div>
 
   </div>
@@ -56,10 +56,7 @@ const props = defineProps<{
 }>()
 
 
-const openProjectInNewTab = () => {
-  const routeUrl = `${router.options.history.base}/project-${props.projName.toLowerCase()}`;
-  window.open(routeUrl, '_blank');
-};
+
 
 
 </script>
