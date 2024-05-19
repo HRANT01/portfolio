@@ -4,7 +4,7 @@
       <icon :icon-name="props.iconName"/>
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <button class="card-btn" @click="openProjectWorkflowInNewTab">More</button>
+      <router-link :to="`project-${props.projName.toLowerCase()}`"  class="card-btn" target="_blank">More</router-link>
     </div>
     <div v-motion-pop-visible class="text-[#00A97F]  basis-1/2 w-full ">
       <div class="ml-[5%]">
@@ -33,7 +33,7 @@
       <icon :icon-name="props.iconName"/>
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <button class="card-btn" @click="openProjectWorkflowInNewTab">More</button>
+      <router-link :to="`project-${props.projName.toLowerCase()}`"  class="card-btn" target="_blank">More</router-link>
     </div>
 
   </div>
@@ -53,7 +53,7 @@ const props = defineProps<{
 
 
 const openProjectWorkflowInNewTab = () => {
-  const routeUrl = `/portfolio/project-${props.projName.toLowerCase()}`;
+  const routeUrl = `/project-${props.projName.toLowerCase()}`;
   window.open(routeUrl, '_blank');
 };
 
