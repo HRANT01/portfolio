@@ -4,7 +4,7 @@
       <icon :icon-name="props.iconName"/>
       <div v-if="props.projName" >{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <router-link class="card-btn"   :to="`/project-${props.projName.toLowerCase()}`" target="_blank">More</router-link>
+      <router-link class="card-btn"  :to="`/project-jvs`" target="_blank">More</router-link>
     </div>
     <div v-motion-pop-visible class="text-[#00A97F]  basis-1/2 w-full ">
       <div class="ml-[5%]">
