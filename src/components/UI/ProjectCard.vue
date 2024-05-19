@@ -33,7 +33,7 @@
       <icon :icon-name="props.iconName"/>
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <button class="card-btn" @click="openProjectWorkflowInNewTab">More</button>
+      <button class="card-btn" @click="openProjectInNewTab">More</button>
     </div>
 
   </div>
@@ -60,6 +60,7 @@ const openProjectInNewTab = () => {
   const routeUrl = `${router.options.history.base}/project-${props.projName.toLowerCase()}`;
   window.open(routeUrl, '_blank');
 };
+
 
 </script>
 
