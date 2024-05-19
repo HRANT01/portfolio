@@ -42,9 +42,7 @@
 <script lang="ts" setup>
 import Icon from "./Icon.vue";
 import Badge from "./Badge.vue";
-import { useRouter } from 'vue-router';
 
-const router = useRouter();
 
 
 const props = defineProps<{
