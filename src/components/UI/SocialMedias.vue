@@ -20,7 +20,7 @@
   </div>
 
   <div class="redes">
-    <a href="../../../public/CV/HrantAleksanyanCV.pdf" download="HrantAleksanyanCV.pdf" class="bg-[#00A97F] mt-7 flex flex-col items-center justify-center ">
+    <a href="/portfolio/CV/HrantAleksanyanCV.pdf" download="HrantAleksanyanCV.pdf" class="bg-[#00A97F] mt-7 flex flex-col items-center justify-center ">
       <font-awesome-icon :icon="faFileDownload" class="mt-2 text-2xl" />
       <span class="text-black font-bold ">PDF</span>
     </a>
