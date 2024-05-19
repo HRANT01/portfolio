@@ -11,19 +11,19 @@ const routes = [
     component: Main,
   },
   {
-    path: '/portfolio/project-workflow',
+    path: '/project-workflow',
     component: ProjectWorkflow
   },
   {
-    path: '/portfolio/project-JVS',
+    path: '/project-JVS',
     component: ProjectJVS
   },
   {
-    path: '/portfolio/project-VMWare',
+    path: '/project-VMWare',
     component: ProjectVMWare
   },
   {
-    path: '/portfolio/project-Trello',
+    path: '/project-Trello',
     component: ProjectTrello
   }
 ];
