@@ -2,9 +2,9 @@
   <div v-if="!props.positionType || props.positionType === 'left'" class="flex justify-between w-[80%] m-auto pb-10 ">
     <div v-motion-pop-visible class="card basis-1/2">
       <icon :icon-name="props.iconName"/>
-      <div v-if="props.projName" >{{ props.projName.toUpperCase() }}</div>
+      <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <router-link class="card-btn"  :to="`/project-${props.projName.toLowerCase()}`" target="_blank">More</router-link>
+      <button class="card-btn" @click="openProjectWorkflowInNewTab">More</button>
     </div>
     <div v-motion-pop-visible class="text-[#00A97F]  basis-1/2 w-full ">
       <div class="ml-[5%]">
@@ -33,7 +33,7 @@
       <icon :icon-name="props.iconName"/>
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <router-link class="card-btn"  :to="`/project-${props.projName.toLowerCase()}`" target="_blank">More</router-link>
+      <button class="card-btn" @click="openProjectWorkflowInNewTab">More</button>
     </div>
 
   </div>
@@ -42,8 +42,6 @@
 <script lang="ts" setup>
 import Icon from "./Icon.vue";
 import Badge from "./Badge.vue";
-
-
 
 const props = defineProps<{
   iconName: string
@@ -54,8 +52,10 @@ const props = defineProps<{
 }>()
 
 
-
-
+const openProjectWorkflowInNewTab = () => {
+  const routeUrl = `/project-${props.projName.toLowerCase()}`;
+  window.open(routeUrl, '_blank');
+};
 
 </script>
 
