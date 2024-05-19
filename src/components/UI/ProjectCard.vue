@@ -4,7 +4,7 @@
       <icon :icon-name="props.iconName"/>
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <button class="card-btn" @click="openProjectWorkflowInNewTab">More</button>
+      <button class="card-btn" @click="openProjectInNewTab">More</button>
     </div>
     <div v-motion-pop-visible class="text-[#00A97F]  basis-1/2 w-full ">
       <div class="ml-[5%]">
@@ -42,6 +42,10 @@
 <script lang="ts" setup>
 import Icon from "./Icon.vue";
 import Badge from "./Badge.vue";
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
 
 const props = defineProps<{
   iconName: string
@@ -52,8 +56,8 @@ const props = defineProps<{
 }>()
 
 
-const openProjectWorkflowInNewTab = () => {
-  const routeUrl = `/portfolio/project-${props.projName.toLowerCase()}`;
+const openProjectInNewTab = () => {
+  const routeUrl = `${router.options.history.base}/project-${props.projName.toLowerCase()}`;
   window.open(routeUrl, '_blank');
 };
 
