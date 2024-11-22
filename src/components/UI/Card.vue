@@ -1,28 +1,22 @@
 <template>
-  <div class="flex flex-col md:flex-row gap-4 justify-center pt-10 md:w-[80%] m-auto">
-      <div class="notification">
-        <div class="notiglow"></div>
-        <div class="notiborderglow"></div>
-        <div class="notititle flex flex-col">
-          <div class="text-5xl">
-            4+
-          </div>
-          <div>
-             Years of Experience
-          </div>
-        </div>
+  <div
+    class="flex flex-col md:flex-row gap-4 justify-center pt-10 md:w-[80%] m-auto"
+  >
+    <div class="notification">
+      <div class="notiglow"></div>
+      <div class="notiborderglow"></div>
+      <div class="notititle flex flex-col">
+        <div class="text-5xl">5+</div>
+        <div>Years of Experience</div>
       </div>
+    </div>
 
     <div class="notification">
       <div class="notiglow"></div>
       <div class="notiborderglow"></div>
       <div class="notititle flex flex-col">
-        <div class="text-5xl">
-          35+
-        </div>
-        <div>
-          Completed Projects
-        </div>
+        <div class="text-5xl">35+</div>
+        <div>Completed Projects</div>
       </div>
     </div>
 
@@ -30,21 +24,14 @@
       <div class="notiglow"></div>
       <div class="notiborderglow"></div>
       <div class="notititle text flex flex-col">
-        <div class="text-5xl">
-          20+
-        </div>
-        <div>
-          Happy Clients
-        </div>
+        <div class="text-5xl">20+</div>
+        <div>Happy Clients</div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-
-</script>
-
+<script setup></script>
 
 <style scoped>
 .notification {
@@ -57,10 +44,10 @@
   background: #29292c;
   border-radius: 1rem;
   overflow: hidden;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 16px;
   --gradient: linear-gradient(to bottom, #44b900, #00b909, #00b961);
-  --color: #00b961
+  --color: #00b961;
 }
 
 .notification:before {
@@ -69,7 +56,7 @@
   inset: 0.0625rem;
   border-radius: 0.9375rem;
   background: #18181b;
-  z-index: 2
+  z-index: 2;
 }
 
 .notification:after {
@@ -84,7 +71,7 @@
 }
 
 .notification:hover:after {
-  transform: translateX(0.15rem)
+  transform: translateX(0.15rem);
 }
 
 .notititle {
@@ -99,11 +86,11 @@
 }
 
 .notification:hover .notititle {
-  transform: translateX(0.15rem)
+  transform: translateX(0.15rem);
 }
 
 .notification:hover .notibody {
-  transform: translateX(0.25rem)
+  transform: translateX(0.25rem);
 }
 
 .notiglow,
@@ -112,7 +99,11 @@
   width: 20rem;
   height: 20rem;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle closest-side at center, white, transparent);
+  background: radial-gradient(
+    circle closest-side at center,
+    white,
+    transparent
+  );
   opacity: 0;
   transition: opacity 300ms ease;
 }
@@ -126,11 +117,11 @@
 }
 
 .notification:hover .notiglow {
-  opacity: 0.1
+  opacity: 0.1;
 }
 
 .notification:hover .notiborderglow {
-  opacity: 0.1
+  opacity: 0.1;
 }
 
 .note {

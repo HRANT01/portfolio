@@ -1,16 +1,16 @@
 <template>
-  <div class="header">
+  <div class="header z-20">
     <div class="progress-container">
-      <div class="progress-bar" ref="progressBar"></div>
+      <div class="progress-bar z-20" ref="progressBar"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref, watch, onMounted, onUnmounted} from 'vue';
+import { ref, watch, onMounted, onUnmounted } from "vue";
 
 const props = defineProps<{
-  scrollContainer: any
+  scrollContainer: any;
 }>();
 
 const progressBar = ref(null);
@@ -18,25 +18,26 @@ const progressBar = ref(null);
 const progressIndicator = () => {
   if (props.scrollContainer) {
     const winScroll = props.scrollContainer.scrollTop;
-    const height = props.scrollContainer.scrollHeight - props.scrollContainer.clientHeight;
+    const height =
+      props.scrollContainer.scrollHeight - props.scrollContainer.clientHeight;
     const scrolled = (winScroll / height) * 100;
-    progressBar.value.style.width = scrolled + '%';
+    progressBar.value.style.width = scrolled + "%";
   }
 };
 
 watch(
-    () => props.scrollContainer,
-    (newVal) => {
-      if (newVal) {
-        newVal.addEventListener('scroll', progressIndicator);
-      }
-    },
-    {immediate: true}
+  () => props.scrollContainer,
+  (newVal) => {
+    if (newVal) {
+      newVal.addEventListener("scroll", progressIndicator);
+    }
+  },
+  { immediate: true }
 );
 
 onUnmounted(() => {
   if (props.scrollContainer) {
-    props.scrollContainer.removeEventListener('scroll', progressIndicator);
+    props.scrollContainer.removeEventListener("scroll", progressIndicator);
   }
 });
 </script>
@@ -64,7 +65,7 @@ body {
 
 .progress-bar {
   height: 8px;
-  background: #00A97F;
+  background: #00a97f;
   width: 0%;
 }
 </style>

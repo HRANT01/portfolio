@@ -1,12 +1,20 @@
 <template>
-  <div v-if="!props.positionType || props.positionType === 'left'" class="flex justify-between w-[80%] m-auto pb-10 ">
+  <div
+    v-if="!props.positionType || props.positionType === 'left'"
+    class="flex justify-between w-[80%] m-auto pb-10"
+  >
     <div v-motion-pop-visible class="card basis-1/2">
-      <icon :icon-name="props.iconName"/>
+      <icon :icon-name="props.iconName" />
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <router-link :to="`project-${props.projName.toLowerCase()}`"  class="card-btn" target="_blank">More</router-link>
+      <router-link
+        :to="`project-${props.projName.toLowerCase()}`"
+        class="card-btn"
+        target="_blank"
+        >More</router-link
+      >
     </div>
-    <div v-motion-pop-visible class="text-[#00A97F]  basis-1/2 w-full ">
+    <div v-motion-pop-visible class="text-[#00A97F] basis-1/2 w-full">
       <div class="ml-[5%]">
         <h3 class="text-2xl mb-2 text-white">Used Stack</h3>
         <div class="flex flex-wrap mb-4">
@@ -15,56 +23,58 @@
           </span>
         </div>
       </div>
-
     </div>
   </div>
 
-  <div v-if="props.positionType === 'right'" class="flex justify-between w-[80%] m-auto pb-10 ">
-    <div v-motion-pop-visible class="text-[#00A97F]  basis-1/2 w-full ">
+  <div
+    v-if="props.positionType === 'right'"
+    class="flex justify-between w-[80%] m-auto pb-10"
+  >
+    <div v-motion-pop-visible class="text-[#00A97F] basis-1/2 w-full">
       <h2 class="text-2xl mb-2 text-white">Used Stack</h2>
 
       <div class="flex flex-wrap">
-          <span v-for="teck in props.usedStack" class="badge-wrapper">
-            <Badge>{{ teck }}</Badge>
-          </span>
+        <span v-for="teck in props.usedStack" class="badge-wrapper">
+          <Badge>{{ teck }}</Badge>
+        </span>
       </div>
     </div>
-    <div v-motion-pop-visible class="card  basis-1/2">
-      <icon :icon-name="props.iconName"/>
+    <div v-motion-pop-visible class="card basis-1/2">
+      <icon :icon-name="props.iconName" />
       <div v-if="props.projName">{{ props.projName.toUpperCase() }}</div>
       <div class="overlay"></div>
-      <router-link :to="`project-${props.projName.toLowerCase()}`"  class="card-btn" target="_blank">More</router-link>
+      <router-link
+        :to="`project-${props.projName.toLowerCase()}`"
+        class="card-btn"
+        target="_blank"
+        >More</router-link
+      >
     </div>
-
   </div>
 </template>
 
 <script lang="ts" setup>
 import Icon from "./Icon.vue";
-import Badge from "./Badge.vue";
+import Badge from "../UI/Badge.vue";
 
 const props = defineProps<{
-  iconName: string
-  projName: string
-  positionType?: 'left' | 'right'
-  usedStack: string[]
-  link?: string
-}>()
-
+  iconName: string;
+  projName: string;
+  positionType?: "left" | "right";
+  usedStack: string[];
+  link?: string;
+}>();
 
 const openProjectWorkflowInNewTab = () => {
   const routeUrl = `/project-${props.projName.toLowerCase()}`;
-  window.open(routeUrl, '_blank');
+  window.open(routeUrl, "_blank");
 };
-
 </script>
 
 <style scoped>
 .card {
   position: relative;
-  width: 350px;
-  height: 250px;
-  background-color: #00A97F;
+  background-color: #00a97f;
   border-radius: 10px;
   display: flex;
   padding: 10px 30px;
@@ -126,7 +136,7 @@ const openProjectWorkflowInNewTab = () => {
   scale: 0;
   transform-origin: 0 0;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card:hover .card-btn {
@@ -150,13 +160,15 @@ const openProjectWorkflowInNewTab = () => {
   transform: translate(-50%, -50%) scale(0);
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(-45deg, #00b961 0%, rgba(0, 185, 97, 0.8) 100%);
+  background-image: linear-gradient(
+    -45deg,
+    #00b961 0%,
+    rgba(0, 185, 97, 0.8) 100%
+  );
   transition: transform 0.5s ease;
 }
 
 .card:hover .overlay::after {
   transform: translate(-50%, -50%) scale(2);
 }
-
-
 </style>
