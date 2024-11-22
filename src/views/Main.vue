@@ -97,10 +97,10 @@ const observers = {
     threshold: 0.5,
   }),
   Toolset: useIntersectionObserver(toolsetSection, handleIntersection, {
-    threshold: 0.5,
+    threshold: 0.2,
   }),
   Experience: useIntersectionObserver(experienceSection, handleIntersection, {
-    threshold: 0.5,
+    threshold: 0.3,
   }),
   Projects: useIntersectionObserver(projectsSection, handleIntersection, {
     threshold: 0.5,
